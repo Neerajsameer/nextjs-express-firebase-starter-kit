@@ -1,0 +1,178 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-outfit: var(--font-outfit);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-header: var(--header);
+  --color-header-foreground: var(--header-foreground);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  font-family: var(--font-outfit), sans-serif;
+
+  /* Radius */
+  --radius: 0.625rem;
+
+  /* Base UI surfaces */
+  --background: #F9FAFB;             /* White background */
+  --foreground: #1f103f;             /* Deep purple for text */
+
+  --card: #ffffff;
+  --card-foreground: #1f103f;
+
+  --popover: #ffffff;
+  --popover-foreground: #1f103f;
+
+  /* Primary theme (main purple) */
+  --primary: #4B5EF6;                /* Rich purple */
+  --primary-foreground: #ffffff;     /* White text over primary */
+
+  /* Secondary and muted (lavender tones) */
+  --secondary: #e4eeff;              /* Lavender background */
+  --secondary-foreground: #5e3ca4;   /* Purple text */
+
+  --muted: #ede9f9;
+  --muted-foreground: #667085;       /* Mid-purple */
+
+  /* Accent */
+  --accent: #ede9f9;
+  --accent-foreground: #5e3ca4;
+
+  /* Destructive (reddish for delete/warning) */
+  --destructive: #ff4d4f;
+
+  /* Borders and Inputs */
+  --border: #E4E7EB;                 /* Light lavender border */
+  --input: #e2d9f3;
+  --ring: #b794f4;                   /* Focus ring - light purple */
+
+  /* Chart colors (optional vibrant shades) */
+  --chart-1: #f59e0b;                /* Amber */
+  --chart-2: #3b82f6;                /* Blue */
+  --chart-3: #6366f1;                /* Indigo */
+  --chart-4: #10b981;                /* Green */
+  --chart-5: #ef4444;                /* Red */
+
+  /* Sidebar Styling */
+  --sidebar: #ffffff;                /* Very light purple */
+  --sidebar-foreground: #344054;     /* Deep purple text */
+  --sidebar-primary: #EDF3FE;        /* Strong purple button */
+  --sidebar-primary-foreground: #4B5EF6; /* White text */
+  --sidebar-accent: #ede9f9;         /* Light purple hover */
+  --sidebar-accent-foreground: #6f49ba;
+  --sidebar-border: #e2d9f3;
+  --sidebar-ring: #b794f4;
+
+  /* Header */
+  --header: #ffffff;               /* A little darker than sidebar */
+  --header-foreground: #1f103f;    /* Same deep purple as text */
+}
+
+
+.dark {
+  /* Radius */
+  --radius: 0.625rem;
+
+  /* Base UI surfaces */
+  --background: #0b0f1a;             /* Deep purple-black background */
+  --foreground: #F9FAFB;             /* Light text */
+
+  --card: #191F2E;                   /* Slightly raised surface */
+  --card-foreground: #F9FAFB;
+
+  --popover: #1a132d;
+  --popover-foreground: #F9FAFB;
+
+  /* Primary theme (main purple) */
+  --primary: #6b7eff;                /* Softer rich purple */
+  --primary-foreground: #ffffff;
+
+  /* Secondary and muted (lavender tones) */
+  --secondary: #2d2452;              /* Lavender tone background */
+  --secondary-foreground: #c5b3f5;   /* Muted lavender text */
+
+  --muted: #2a243f;
+  --muted-foreground: #a0a0c0;
+
+  /* Accent */
+  --accent: #32284c;
+  --accent-foreground: #d1b3ff;
+
+  /* Destructive */
+  --destructive: #ff5c5e;
+  --destructive-foreground: #ffffff;
+
+  /* Borders and Inputs */
+  --border: #313d4d;
+  --input: #3f3560;
+  --ring: #8f6dfc;
+
+  /* Chart colors (same as light for consistency) */
+  --chart-1: #fbbf24;                /* Amber */
+  --chart-2: #60a5fa;                /* Blue */
+  --chart-3: #818cf8;                /* Indigo */
+  --chart-4: #34d399;                /* Green */
+  --chart-5: #f87171;                /* Red */
+
+  /* Sidebar Styling */
+  --sidebar: #121827;
+  --sidebar-foreground: #e0ddee;
+  --sidebar-primary: #19203F;
+  --sidebar-primary-foreground: #7B91F7;
+  --sidebar-accent: #2c2447;
+  --sidebar-accent-foreground: #d4c2f7;
+  --sidebar-border: #3f3560;
+  --sidebar-ring: #8f6dfc;
+
+  /* Header */
+  --header: #121827;
+  --header-foreground: #F9FAFB;
+
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-outfit), sans-serif;
+  }
+}

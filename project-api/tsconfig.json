@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    // "strictPropertyInitialization": false,
+    "target": "ES6",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "outDir": "./dist",
+    // "target": "es5" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
+    "module": "commonjs" /* Specify what module code is generated. */,
+        
+    "allowJs": true,
+    "skipLibCheck": true,
+    // "module": "es2015",
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    // "noEmit": true,
+    "esModuleInterop": true,
+    // "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "strictNullChecks": true,
+
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

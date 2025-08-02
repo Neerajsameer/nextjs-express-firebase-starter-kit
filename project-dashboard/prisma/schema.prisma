@@ -1,0 +1,60 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["relationJoins"]
+}
+
+datasource db {
+  provider = "cockroachdb"
+  url      = env("DATABASE_URL")
+}
+
+model organisations {
+  id                  String                @id @default(nanoid())
+  name                String
+  created_at          DateTime              @default(now())
+  updated_at          DateTime              @updatedAt
+  Organisations_users organisations_users[]
+  projects            projects[]
+}
+
+model users {
+  id             String    @id @default(nanoid())
+  name           String
+  bio            String?
+  email          String?
+  phone          String?
+  photo_url      String?
+  avatar_file_id String?
+  uid            String    @unique
+  created_at     DateTime  @default(now()) @db.Timestamptz(3)
+  last_active_at DateTime? @db.Timestamptz(3)
+  device_info    Json?
+  user_name      String?   @unique
+
+  Organisations_users organisations_users[]
+}
+
+model organisations_users {
+  id              String        @id @default(nanoid())
+  organisation_id String
+  user_id         String
+  organisation    organisations @relation(fields: [organisation_id], references: [id])
+  user            users         @relation(fields: [user_id], references: [id])
+}
+
+// Projects
+
+// Projects
+model projects {
+  id          String   @id @default(nanoid())
+  name        String
+  description String
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
+
+  status String @default("In Progress") // TODO: Make it an Enum later
+
+  user_id         String
+  organisation_id String
+  organisation    organisations @relation(fields: [organisation_id], references: [id])
+}
